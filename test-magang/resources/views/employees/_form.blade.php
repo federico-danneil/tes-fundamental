@@ -31,18 +31,16 @@
 
 <!-- Jabatan / Posisi -->
 <div>
-    <label for="position_id" class="block font-medium text-sm text-gray-700">Jabatan</label>
-    <select name="position_id" id="position_id"
-        class="mt-1 block w-full rounded border-gray-300 shadow-sm" required>
-        <option value="">Pilih Jabatan</option>
-        @foreach ($positions as $pos)
-            <option value="{{ $pos->id }}"
-                {{ old('position_id', $employee->position_id ?? '') == $pos->id ? 'selected' : '' }}>
-                {{ $pos->name }}
-            </option>
-        @endforeach
-    </select>
-</div>
+                        <label for="position_id" class="block font-medium text-sm text-gray-700">Jabatan</label>
+                        <select name="position_id" id="position_id" class="mt-1 block w-full rounded border-gray-300 shadow-sm" required>
+                            <option value=""> Pilih Jabatan </option>
+                            @foreach ($positions as $pos)
+                                <option value="{{ $pos->id }}" {{ old('position_id') == $pos->id ? 'selected' : '' }}>
+                                    {{ $pos->title }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
 
 <!-- Tanggal Lahir -->
 <div>
